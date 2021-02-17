@@ -1,16 +1,14 @@
 (function () {
     var password = document.getElementById('pswrd');
     var confPassword = document.getElementById('confpswrd');
-    var form = document.getElementById('form');
+    var errmsg = document.getElementById('err')
 
     confPassword.addEventListener('blur', cPassword, false);
     function cPassword() { //confirma que el valor de ambas contraseñas sean iguales
         if (password.value !== confPassword.value) { //si sus valores son diferentes
-            var msg = document.createElement('p'); // crea un elemento p
-            msg.innerHTML = 'Passwords don\'t match'; // guarda el mensaje de error en el elemento
-            form.appendChild(msg); // adjunta el mensaje al final del elemento form
+            errmsg.innerHTML = 'Passwords don\'t match'; // muestra el mensaje de error
         } else {
-            msg.remove();
+            errmsg.innerHTML = ''; // si no no muestres nada
         }
     }
-}())
+}());
