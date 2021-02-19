@@ -13,8 +13,16 @@
         }
     }
 
-    elButton.addEventListener('click');
-    function (e) {
-        e.preven
+    var counter = 0;
+    elButton.addEventListener('click', changeColorMode, false);
+    function changeColorMode() {
+        counter++
+        if (counter % 2 === 1) {
+            document.body.className = 'dark';
+            elButton.innerHTML = 'White';
+        } else {
+            document.body.className = 'white';
+            elButton.innerHTML = 'Dark';
+        }
     }
 }());
